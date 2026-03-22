@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr Abubakar Badmos — Global Health Researcher</title>
+  <meta name="description" content="Academic portfolio of Dr Abubakar Olaitan Badmos — publications, presentations, and research in global health and public health intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #1a1a1a;
+      --paper: #faf8f5;
+      --cream: #f3efe8;
+      --warm: #e8e0d4;
+      --accent: #b44a2d;
+      --accent-light: #d4764a;
+      --muted: #7a7165;
+      --rule: #d5cec4;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.2rem; color: var(--ink);
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); text-decoration: none; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 2rem 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -20%; right: -10%;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(180,74,45,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px; background: var(--rule);
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 600; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-label::before { content: ''; width: 32px; height: 1.5px; background: var(--accent); }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 1.08; letter-spacing: -0.025em;
+      margin-bottom: 1.5rem; font-weight: 400;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-desc {
+      font-size: 1.1rem; color: var(--muted); max-width: 600px;
+      line-height: 1.7; margin-bottom: 2.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem 3rem;
+      padding-top: 2rem; border-top: 1px solid var(--rule);
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .hero-meta-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); font-weight: 600;
+    }
+    .hero-meta-value { font-size: 0.95rem; color: var(--ink); font-weight: 500; }
+    .hero-meta-value a { color: var(--accent); text-decoration: none; }
+    .hero-meta-value a:hover { text-decoration: underline; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 100px 2rem; position: relative; }
+    section::after { content: ''; position: absolute; bottom: 0; left: 2rem; right: 2rem; height: 1px; background: var(--rule); }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .section-header h2 {
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400; letter-spacing: -0.02em;
+    }
+    .section-header h2 span { color: var(--accent); }
+    .section-count {
+      font-family: var(--mono); font-size: 0.8rem; color: var(--muted);
+      background: var(--cream); padding: 0.4rem 1rem; border-radius: 4px;
+    }
+
+    /* ===== PUBLICATIONS ===== */
+    #publications { background: var(--cream); }
+    .pub-filters {
+      display: flex; gap: 0.6rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+    }
+    .pub-filter {
+      padding: 0.45rem 1.1rem; border-radius: 100px;
+      background: transparent; border: 1.5px solid var(--rule);
+      font-family: var(--sans); font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; transition: all 0.25s; color: var(--muted);
+    }
+    .pub-filter:hover { border-color: var(--accent); color: var(--accent); }
+    .pub-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      display: grid; grid-template-columns: 60px 1fr auto;
+      gap: 1.5rem; align-items: start;
+      padding: 1.8rem 0; border-top: 1px solid var(--rule);
+      opacity: 0; animation: fadeUp 0.5s forwards;
+    }
+    .pub-item:last-child { border-bottom: 1px solid var(--rule); }
+    .pub-year {
+      font-family: var(--mono); font-size: 0.82rem; color: var(--muted);
+      padding-top: 0.3rem;
+    }
+    .pub-content h3 {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+      line-height: 1.4; margin-bottom: 0.5rem; letter-spacing: -0.01em;
+    }
+    .pub-content h3 a {
+      color: var(--ink); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .pub-content h3 a:hover { color: var(--accent); }
+    .pub-authors {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+    }
+    .pub-authors strong { color: var(--ink); font-weight: 600; }
+    .pub-journal {
+      font-size: 0.82rem; font-style: italic; color: var(--accent-light);
+      margin-top: 0.3rem;
+    }
+    .pub-badge {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.3rem 0.8rem; border-radius: 3px; font-weight: 600;
+      white-space: nowrap; align-self: center;
+    }
+    .pub-badge.journal { background: rgba(180,74,45,0.1); color: var(--accent); }
+    .pub-badge.chapter { background: rgba(122,113,101,0.12); color: var(--muted); }
+
+    /* ===== PRESENTATIONS ===== */
+    .pres-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.2rem;
+    }
+    .pres-card {
+      background: var(--cream); border-radius: 8px; padding: 1.8rem;
+      border: 1px solid var(--rule);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .pres-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .pres-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+      background: var(--accent); opacity: 0; transition: opacity 0.25s;
+    }
+    .pres-card:hover::before { opacity: 1; }
+    .pres-year-badge {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
+      background: rgba(180,74,45,0.08); display: inline-block;
+      padding: 0.2rem 0.6rem; border-radius: 3px; margin-bottom: 0.8rem;
+    }
+    .pres-card h3 {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+      line-height: 1.4; margin-bottom: 0.6rem;
+    }
+    .pres-venue { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ===== ABOUT / PORTFOLIO ===== */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    }
+    .about-text h3 {
+      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+      margin-bottom: 1.2rem; letter-spacing: -0.01em;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.75; font-size: 0.95rem; }
+    .expertise-list { list-style: none; margin-top: 1.5rem; }
+    .expertise-list li {
+      padding: 0.7rem 0; border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem;
+    }
+    .expertise-list li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stat-card {
+      background: var(--paper); border-radius: 8px; padding: 1.8rem;
+      text-align: center; border: 1px solid var(--rule);
+    }
+    .stat-number {
+      font-family: var(--serif); font-size: 2.8rem; color: var(--accent);
+      line-height: 1; margin-bottom: 0.4rem;
+    }
+    .stat-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 500; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 2rem; text-align: center;
+      background: var(--ink); color: rgba(255,255,255,0.5);
+    }
+    footer::after { display: none; }
+    .footer-name {
+      font-family: var(--serif); font-size: 1.5rem; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem;
+      transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .footer-links a:hover { color: var(--accent-light); }
+    .footer-copy { font-size: 0.75rem; margin-top: 2rem; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 60px; left: 0; right: 0;
+        background: var(--paper); padding: 1.5rem 2rem; gap: 1.2rem;
+        border-bottom: 1px solid var(--rule);
+      }
+      .mobile-toggle { display: block; }
+      .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pub-year { padding-top: 0; }
+      .pub-badge { justify-self: start; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-meta { gap: 1rem 2rem; }
+      .pres-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">A<span>.</span>Badmos</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#presentations">Presentations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Global Health Research</div>
+      <h1>Dr Abubakar<br>Olaitan <em>Badmos</em></h1>
+      <p class="hero-desc">
+        Public health researcher with expertise in evidence synthesis, epidemiological analysis, programme evaluation, and data-driven decision-making across sub-Saharan Africa and the United Kingdom.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Position</span>
+          <span class="hero-meta-value">Public Health Researcher</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Institution</span>
+          <span class="hero-meta-value">West Suffolk NHS Trust / UEA</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Education</span>
+          <span class="hero-meta-value">MSc Public Health (Distinction) · MBBS</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Location</span>
+          <span class="hero-meta-value">United Kingdom</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>Published <span>Works</span></h2>
+        <span class="section-count">7 publications</span>
+      </div>
+      <div class="pub-filters reveal">
+        <button class="pub-filter active" data-filter="all">All</button>
+        <button class="pub-filter" data-filter="journal">Journal Articles</button>
+        <button class="pub-filter" data-filter="chapter">Book Chapters</button>
+      </div>
+      <div class="pub-list" id="pubList">
+        <!-- Publications injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENTATIONS -->
+  <section id="presentations">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>Conferences & <span>Presentations</span></h2>
+        <span class="section-count">6 presentations</span>
+      </div>
+      <div class="pres-grid" id="presGrid">
+        <!-- Presentations injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>About <span>Me</span></h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <h3>Research Focus</h3>
+          <p>
+            I am a GMC-licensed medical professional and public health researcher dedicated to improving health outcomes through rigorous evidence synthesis and programme evaluation. My work spans malaria control, immunisation, maternal and child health, tobacco harm reduction, and infectious disease surveillance.
+          </p>
+          <p>
+            Previously, I served at Nigeria's National Primary Health Care Development Agency, where I led national-level monitoring and evaluation programmes, designed quality improvement protocols across 18 states, and contributed to policy formulation through data-driven insights.
+          </p>
+          <ul class="expertise-list">
+            <li>Evidence synthesis &amp; systematic review</li>
+            <li>Epidemiological research &amp; surveillance</li>
+            <li>Cost-effectiveness analysis &amp; modelling</li>
+            <li>Monitoring &amp; evaluation framework design</li>
+            <li>Quantitative analysis (R, SPSS, Power BI)</li>
+            <li>Policy analysis &amp; stakeholder engagement</li>
+            <li>Programme evaluation (LQAS, PAPA)</li>
+            <li>Research governance &amp; ethics (GCP certified)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-number">7</div>
+              <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Presentations</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">18</div>
+              <div class="stat-label">States Covered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years in Research</div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <div class="stat-card" style="text-align:left;">
+              <div class="stat-label" style="margin-bottom:0.8rem;">Education</div>
+              <p style="font-size:0.9rem;margin-bottom:0.6rem;"><strong>MSc Public Health</strong> — University of South Wales, UK<br><span style="color:var(--accent);font-size:0.82rem;">Distinction · Overall Best Graduating Student</span></p>
+              <p style="font-size:0.9rem;"><strong>MBBS Medicine &amp; Surgery</strong> — University of Ilorin, Nigeria<br><span style="color:var(--accent);font-size:0.82rem;">Best Graduating Student in Biochemistry</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact">
+    <div class="footer-name">Dr Abubakar Olaitan Badmos</div>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);margin-bottom:0.5rem;">Global Health Researcher &amp; Public Health Analyst</p>
+    <div class="footer-links">
+      <a href="mailto:abubakarbadmos78@gmail.com">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 8l9 6 9-6M3 8v10a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-4 9 4"/></svg>
+        abubakarbadmos78@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/abubakar-badmos-489934341" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://www.researchgate.net/profile/Abubakar-Badmos-2" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.078.53h-.005a3.334 3.334 0 00.112.44c.244.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a1.86 1.86 0 00-.07-.592.807.807 0 00-.344-.451.876.876 0 00-.519-.158H19.41c-.26 0-.445.09-.554.262a.955.955 0 00-.168.544c.002.063.01.17.025.32.016.15.026.295.026.435 0 .303-.078.54-.234.713-.154.17-.383.256-.685.256-.377 0-.646-.133-.805-.4-.16-.267-.24-.678-.24-1.234V6.085h2.768c.39 0 .67-.1.838-.297.167-.198.25-.46.25-.79 0-.328-.084-.592-.25-.79-.168-.198-.448-.297-.838-.297H16.75v-1.77c0-.342-.09-.6-.272-.775-.182-.175-.418-.263-.71-.263-.298 0-.537.088-.72.263-.18.175-.27.433-.27.775v1.77h-.857c-.34 0-.593.097-.762.29a1.07 1.07 0 00-.254.748c0 .32.084.577.254.77.17.193.422.29.762.29h.857v3.17c0 .93.1 1.72.295 2.373.197.654.497 1.19.9 1.607a3.452 3.452 0 001.47.926c.576.197 1.235.296 1.975.296.753 0 1.395-.09 1.924-.272.53-.183.96-.44 1.29-.776.332-.334.57-.738.717-1.21.146-.474.22-1.003.22-1.59v-.09c0-.348-.09-.613-.27-.796-.18-.182-.42-.274-.72-.274-.303 0-.54.088-.712.263-.17.175-.256.433-.256.775v.09c0 .534-.127.95-.38 1.247-.254.297-.61.445-1.065.445-.442 0-.79-.156-1.05-.47-.256-.313-.384-.766-.384-1.358V6.085zM5.07 12.233c.078-.36.22-.677.427-.95a2.18 2.18 0 01.73-.633 2.07 2.07 0 011.99.003c.29.167.534.38.734.64.2.26.35.566.447.918.097.352.146.734.146 1.146 0 .39-.05.76-.146 1.107-.097.35-.247.658-.447.924-.2.267-.443.478-.733.635a2.006 2.006 0 01-1.004.235 2.04 2.04 0 01-.988-.235 2.16 2.16 0 01-.73-.635 3.01 3.01 0 01-.427-.924 3.97 3.97 0 01-.148-1.107c0-.412.05-.794.148-1.146zm-2.98-4.09c0-.174.065-.32.193-.44a.627.627 0 01.445-.18h3.733a3.736 3.736 0 00-.633-.54 4.389 4.389 0 00-1.709-.774 5.01 5.01 0 00-1.107-.13c-.773 0-1.474.148-2.104.448a4.97 4.97 0 00-1.597 1.2c-.44.503-.78 1.09-1.02 1.76A6.314 6.314 0 000 11.36c0 .79.118 1.528.353 2.216.236.687.572 1.285 1.01 1.795.44.51.97.91 1.59 1.2.62.29 1.316.435 2.087.435.763 0 1.44-.142 2.032-.428a4.89 4.89 0 001.53-1.153l.193.838c.067.28.17.47.305.567a.81.81 0 00.504.145c.292 0 .525-.093.698-.28.174-.186.26-.434.26-.743V8.143c0-.344-.09-.608-.266-.795-.176-.187-.416-.28-.72-.28H2.728a.627.627 0 00-.445.18.598.598 0 00-.193.44c0 .18.064.33.193.45a.627.627 0 00.445.18h2.484v5.32a3.083 3.083 0 01-.41.488 2.634 2.634 0 01-.557.41 3.017 3.017 0 01-.673.28 2.89 2.89 0 01-.75.104c-.517 0-.975-.12-1.374-.36a3.2 3.2 0 01-1.01-.963 4.47 4.47 0 01-.622-1.38A6.015 6.015 0 010 11.36c0-.56.07-1.085.21-1.578.14-.493.345-.924.612-1.293.268-.37.596-.662.985-.88.39-.217.83-.326 1.324-.326.395 0 .755.067 1.082.2.327.134.62.308.88.523l.008.006a.768.768 0 00.43.175c.15 0 .286-.06.406-.178a.598.598 0 00.18-.43.73.73 0 00-.2-.51c-.346-.38-.76-.672-1.235-.877a4.16 4.16 0 00-1.55-.308z"/></svg>
+        ResearchGate
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Dr Abubakar Badmos. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // === DATA ===
+    const publications = [
+      {
+        year: 2022,
+        type: "chapter",
+        title: "Tobacco Control in Sub-Saharan Africa \u2013 Challenges and Recommendations",
+        authors: "Alaran, A.J., Khalid-Salako, F., Adebisi, Y.A., <strong>Badmos, A.</strong>, Oladipo, O., Onibon, Z. and Lucero-Prisno III, D.E.",
+        journal: "Health Promotion, IntechOpen",
+        doi: "https://doi.org/10.5772/intechopen.102023"
+      },
+      {
+        year: 2022,
+        type: "journal",
+        title: "Decisive or Impulsive? Re-examining Africa\u2019s Lockdown Response to COVID-19",
+        authors: "Alaran, A.J., <strong>Badmos, A.</strong>, Bouaddi, O., Adebisi, Y.A., Ben-Umeh, K., Idris, U. and Lucero-Prisno, D.E.",
+        journal: "Tropical Medicine and Health, 50(1), p. 22",
+        doi: "https://doi.org/10.1186/s41182-022-00414-7"
+      },
+      {
+        year: 2022,
+        type: "journal",
+        title: "Revisiting the Issue of Access to Medicines in Africa: Challenges and Recommendations",
+        authors: "Adebisi, Y.A., Nwogu, I.B., Alaran, A.J., <strong>Badmos, A.O.</strong>, Bamgboye, A.O., Rufai, B.O., Okonji, O.C., Malik, M.O., Teibo, J.O., Abdalla, S.F., Lucero-Prisno, D.E., Samai, M. and Akande-Sholabi, W.",
+        journal: "Public Health Challenges, 1(2)",
+        doi: "https://doi.org/10.1002/puh2.9"
+      },
+      {
+        year: 2021,
+        type: "journal",
+        title: "What Sub-Saharan African Countries Can Learn from Malaria Elimination in China",
+        authors: "<strong>Badmos, A.</strong>, Alaran, A.J., Adebisi, Y.A., Bouaddi, O., Onibon, Z., Dada, A., Lin, X. and Lucero-Prisno, D.E.",
+        journal: "Tropical Medicine and Health, 49(1), p. 86",
+        doi: "https://doi.org/10.1186/s41182-021-00379-z"
+      },
+      {
+        year: 2021,
+        type: "journal",
+        title: "Uneven Power Dynamics Must Be Levelled in COVID-19 Vaccines Access and Distribution",
+        authors: "Alaran, A.J., Adebisi, Y.A., <strong>Badmos, A.</strong>, Khalid-Salako, F., Gaya, S.K., Ilesanmi, E.B., Olaoye, D.Q., Bamisaiye, A. and Lucero-Prisno, D.E.",
+        journal: "Public Health in Practice, 2, p. 100096",
+        doi: "https://doi.org/10.1016/j.puhip.2021.100096"
+      },
+      {
+        year: 2021,
+        type: "journal",
+        title: "How West African Countries Prioritize Health",
+        authors: "Adebisi, Y.A., Alaran, A., <strong>Badmos, A.</strong>, Bamisaiye, A.O., Emmanuella, N., Etukakpan, A.U., Oladunjoye, I.O., Oluwaseyifunmi, O., Musa, S.K., Akinmuleya, T., Olaoye, O.C., Olarewaju, O.A. and Lucero-Prisno, D.E.",
+        journal: "Tropical Medicine and Health, 49(1), p. 87",
+        doi: "https://doi.org/10.1186/s41182-021-00380-6"
+      },
+      {
+        year: 2021,
+        type: "journal",
+        title: "COVID-19 Emphasises the Need to Build Research Capacity in Africa",
+        authors: "Itohan, A.M., Khalid, F.-S., <strong>Badmos, A.</strong> and Aisha J, A.",
+        journal: "Advances in Medical, Dental and Health Sciences, 4(2), pp. 9\u201310",
+        doi: "https://doi.org/10.5530/amdhs.2021.2.3"
+      }
+    ];
+
+    const presentations = [
+      {
+        year: 2025,
+        title: "Cessation of Smoking in Emergency Departments (COSTED)",
+        venue: "National Tobacco Conference, England"
+      },
+      {
+        year: 2025,
+        title: "Making Every Contact Count (MECC)",
+        venue: "Annual Regional MECC Conference"
+      },
+      {
+        year: 2024,
+        title: "Achievements in Rural Health, Care and Wellbeing Over the Last Ten Years",
+        venue: "Rural Health and Care Wales, Builth Wells, Wales"
+      },
+      {
+        year: 2023,
+        title: "Review of the Global Fund RSSH Grant in Nigeria",
+        venue: "Organised by the Global Fund"
+      },
+      {
+        year: 2022,
+        title: "Stroke and Medical Conditions: Are Safer Nicotine Products Effective as a Preventive Strategy?",
+        venue: "Global Forum on Nicotine, Warsaw, Poland"
+      },
+      {
+        year: 2022,
+        title: "Nigeria\u2019s Experience of Telemedicine",
+        venue: "WHO Regional Office for Africa & WHO Headquarters Telemedicine Capacity Workshop"
+      },
+      {
+        year: 2022,
+        title: "Antenatal Immunisation and Its Role in Reducing Infant Mortality",
+        venue: "Society of Obstetrics and Gynaecology of Nigeria (SOGON) Conference"
+      }
+    ];
+
+    // === RENDER PUBLICATIONS ===
+    const pubList = document.getElementById('pubList');
+    function renderPubs(filter = 'all') {
+      const filtered = filter === 'all' ? publications : publications.filter(p => p.type === filter);
+      pubList.innerHTML = filtered.map((p, i) => `
+        <div class="pub-item" style="animation-delay:${i * 0.06}s" data-type="${p.type}">
+          <span class="pub-year">${p.year}</span>
+          <div class="pub-content">
+            <h3><a href="${p.doi}" target="_blank" rel="noopener">${p.title}</a></h3>
+            <p class="pub-authors">${p.authors}</p>
+            <p class="pub-journal">${p.journal}</p>
+          </div>
+          <span class="pub-badge ${p.type}">${p.type === 'chapter' ? 'Book Chapter' : 'Journal Article'}</span>
+        </div>
+      `).join('');
+    }
+    renderPubs();
+
+    // Filters
+    document.querySelectorAll('.pub-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderPubs(btn.dataset.filter);
+      });
+    });
+
+    // === RENDER PRESENTATIONS ===
+    const presGrid = document.getElementById('presGrid');
+    presGrid.innerHTML = presentations.map((p, i) => `
+      <div class="pres-card reveal" style="transition-delay:${i * 0.08}s">
+        <span class="pres-year-badge">${p.year}</span>
+        <h3>${p.title}</h3>
+        <p class="pres-venue">${p.venue}</p>
+      </div>
+    `).join('');
+
+    // === SCROLL REVEAL ===
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // === NAV SCROLL ===
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // === MOBILE MENU ===
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
